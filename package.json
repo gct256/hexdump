@@ -1,10 +1,11 @@
 {
   "name": "@gct256/hexdump",
   "description": "A finely customizable hex dump utility.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "scripts": {
     "watch": "rollup -c -w",
+    "prebuild": "rimraf types",
     "build": "NODE_ENV=production rollup -c",
     "prepublishOnly": "npm run build"
   },
@@ -22,6 +23,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-promise": "^4.2.1",
     "prettier": "^1.19.1",
+    "rimraf": "^3.0.0",
     "rollup": "^1.30.0",
     "rollup-plugin-auto-external": "^2.0.0",
     "rollup-plugin-typescript2": "^0.25.3",

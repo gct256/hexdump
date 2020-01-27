@@ -13,7 +13,13 @@ const base = {
           declaration: isProduction,
           declarationDir: './types',
         },
-        include: ['./src/index.ts', './src/missing.d.ts'],
+        include: [
+          './src/index.ts',
+          './src/modules/Options.ts',
+          './src/modules/Context.ts',
+          './src/modules/OutputData.ts',
+          './src/missing.d.ts',
+        ],
         exclude: ['./node_modules/**/*.*'],
       },
       useTsconfigDeclarationDir: true,
@@ -38,4 +44,5 @@ const targets = [
   },
 ];
 
+// eslint-disable-next-line import/no-default-export
 export default targets;
