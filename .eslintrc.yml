@@ -1,0 +1,101 @@
+# 共通のeslintrc
+
+root: true
+
+extends:
+  - airbnb-base
+  - plugin:promise/recommended
+  - plugin:@typescript-eslint/recommended
+  - plugin:prettier/recommended
+  - prettier/@typescript-eslint
+
+parser: '@typescript-eslint/parser'
+
+env:
+  browser: true
+
+parserOptions:
+  sourceType: module
+  ecmaFeatures:
+    jsx: false
+
+settings:
+  import/resolver:
+    node:
+      extensions:
+        - .ts
+        - .js
+
+rules:
+  # consoleは限定
+  no-console:
+    - error
+    - allow: [debug, warn, error]
+
+  # case の break 省略はエラー / fall through コメントで抑制
+  no-fallthrough:
+    - error
+
+  # default export は使わない
+  import/prefer-default-export:
+    - off
+  import/no-default-export:
+    - error
+
+  # importの順
+  import/order:
+    - error
+    - newlines-between: always
+
+  # interface 継承時は空でもよい
+  '@typescript-eslint/no-empty-interface':
+    - error
+    - allowSingleExtends: true
+
+  # 適当に空行が入るようにする
+  padding-line-between-statements:
+    - error
+    - { blankLine: always, prev: '*', next: return }
+    - { blankLine: any, prev: export, next: export }
+    - { blankLine: always, prev: '*', next: if }
+    - { blankLine: always, prev: '*', next: const }
+    - { blankLine: always, prev: const, next: '*' }
+    - { blankLine: any, prev: const, next: const }
+    - { blankLine: always, prev: case, next: '*' }
+
+  # 適当に空行が入るようにする
+  lines-between-class-members:
+    - error
+    - always
+    - exceptAfterSingleLine: true
+
+  # 戻り値の型は常に必要
+  '@typescript-eslint/explicit-function-return-type':
+    - error
+    - allowExpressions: true # 引数のコールバックなどは省略可
+
+  # 関数はconstで定義する
+  func-style:
+    - error
+    - expression
+
+  # 先頭が_の変数は使ってなくても良い
+  '@typescript-eslint/no-unused-vars':
+    - error
+    - argsIgnorePattern: '^_'
+
+  # 引数のプロパティを操作してもよい変数名を指定
+  no-param-reassign:
+    - error
+    - props: true
+      ignorePropertyModificationsFor: []
+
+  import/extensions:
+    - error
+    - never
+
+  no-bitwise:
+    - off
+
+  class-methods-use-this:
+    - off

@@ -1,0 +1,9 @@
+.vscode
+example
+src
+.eslint*
+.git*
+prettier.config.js
+rollup.config.js
+tsconfig.json
+yarn.lock
