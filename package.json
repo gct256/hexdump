@@ -27,5 +27,21 @@
     "rollup-plugin-typescript2": "^0.25.3",
     "typescript": "^3.7.5"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "directories": {
+    "example": "example",
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gct256/hexdump.git"
+  },
+  "keywords": [
+    "hexdump"
+  ],
+  "author": "gct256+github@gmail.com",
+  "bugs": {
+    "url": "https://github.com/gct256/hexdump/issues"
+  },
+  "homepage": "https://github.com/gct256/hexdump#readme"
 }
