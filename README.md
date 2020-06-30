@@ -50,6 +50,7 @@ hexdump(buffer: BufferLike, {
   - allow types:
     - `number[]`
     - `string` (convert to Buffer with utf8 encoding)
+    - `ArrayBuffer`
     - `Uint8Array`, `ClampledUint8Array`, `Int8Array`
     - `Uint16Array`, `Int16Array` (use endianness option)
     - `Uint32Array`, `Int32Array` (use endianness option)

@@ -5,6 +5,7 @@ export type BufferLike =
   | Buffer
   | number[]
   | string
+  | ArrayBuffer
   | Uint8Array
   | Uint8ClampedArray
   | Int8Array
@@ -32,6 +33,7 @@ export const getBuffer = (
   }
 
   if (
+    value instanceof ArrayBuffer ||
     value instanceof Uint8Array ||
     value instanceof Uint8ClampedArray ||
     value instanceof Int8Array
