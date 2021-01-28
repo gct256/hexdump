@@ -1,7 +1,7 @@
 {
   "name": "@gct256/hexdump",
   "description": "A finely customizable hex dump utility.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "scripts": {
     "watch": "rollup -c -w",
